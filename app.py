@@ -10,6 +10,13 @@ with open ('heartt.pkl','rb') as file:
 def home():
     return render_template("index.html")
 
+@app.route('/predi')
+def prediction_page():
+    return render_template("predi.html")
+
+@app.route('/home')
+def home_page():
+    return render_template("index.html")
 @app.route('/predict' ,methods=["POST"])
 def predict():
    a1=request.form['ST_Slope']
@@ -22,7 +29,8 @@ def predict():
    predict=model.predict(input_data)
    predict="Yes" if predict==1 else "NO"
    # return prediction
-   return render_template("index.html",prediction=predict)
+   return render_template("result.html",prediction=predict)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,79 @@
+=<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='predi.css')}}">
+</head>
+<body>
+    <div class="div-container">
+        <div class="box">
+               
+                <h1>Fill the form</h1>
+                <form action="/predict" method="POST">
+                    <label for="name">Name:</label><br>
+                    <input type="text" class="custom-input" name="Name"><br><br>
+
+                    <label for="gender">Gender:</label><br>
+                    <select class="custom-selection" name="Gender">
+                        <option value=0>Male</option>
+                        <option value=1>Female</option>
+                    </select><br><br>
+
+                    <label for="ChestPainType">ChestPainTypea:</label><br>
+                    <select class="custom-selection" name="ChestPainType">
+                        <option value=0>Up</option>
+                        <option value=1>Flat</option>
+                        <option value=2>Down</option>
+                    </select><br><br>
+
+                    <label for="RestingBP ">RestingBP:</label><br>
+                    <input type="number" class="custom-input" name="RestingBP" placeholder="90-200"><br><br>
+
+                    <label for="Cholesterol">Cholesterol:</label><br>
+                    <input type="number" class="custom-input" name="Cholesterol" placeholder="0-700"><br><br>
+
+                   <label for="FastingBS">FastingBS:</label><br>
+                    <select class="custom-selection" name="FastingBS">
+                        <option value=0>0</option>
+                        <option value=1>1</option>
+                    </select><br><br>
+
+                    <label for="RestingECG">RestingECG:</label><br>
+                    <select class="custom-selection" name="RestingECG">
+                        <option value=0>Normal</option>
+                        <option value=1>ST</option>
+                        <option value=2>LVH</option>
+                    </select><br><br>
+
+                    <label for="MaxHR">MaxHR:</label><br>
+                    <input type="number" class="custom-input" name="MaxHR" placeholder="50-230"><br><br>
+
+                    <label for="Oldpeak">Oldpeak:</label><br>
+                    <input type="number" class="custom-input" name="Oldpeak" step="0.1" min="-3" max="6" placeholder="0.0"><br><br>
+
+                    <label for="ST_Slope">ST_Slope:</label><br>
+                    <select class="custom-selection" name="ST_Slope">
+                        <option value=0>ATA</option>
+                        <option value=1>NAP</option>
+                        <option value=2>ASY</option>
+                        <option value=3>TA</option>
+                    </select><br><br>
+
+                    <label for="ExerciseAngina">ExerciseAngina:</label><br>
+                     <select class="custom-selection" name="ExerciseAngina">
+                        <option value=0>NO</option>
+                        <option value=1>YES</option>
+                    </select><br><br>
+                    
+                    <button type="submit">submit</button>
+               </form>
+                {% if prediction %}
+                <p class="result">Result:{{prediction}}</p>
+                {% endif %}
+      
+                
+        </div>
+    </div>
+</body>
+</html>

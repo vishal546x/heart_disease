@@ -1,0 +1,94 @@
+/* 🎯 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌌 Background */
+body {
+  font-family: 'Segoe UI', sans-serif;
+   background: linear-gradient(135deg, #0c0c0c, #451212);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 📦 Container */
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  backdrop-filter: blur(5px);
+}
+
+/* 🔠 Heading */
+.container h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* 🧠 Result Text */
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ebe8e1;
+  margin-bottom: 30px;
+  border: 1px solid #f3dac7;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(0, 255, 195, 0.08);
+  animation: popIn 0.8s ease forwards;
+}
+
+/* 🔵 Royal Blue Placement Theme Button */
+.gold-button {
+  padding: 14px 32px;
+  font-size: 16px;
+  color: white;
+ background: linear-gradient(135deg, #f36e6e, #e36c6c);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 12px; 
+  transition: 0.6s ease;
+  box-shadow: 0 0 12px rgba(31, 59, 124, 0.3);
+  animation: bounceIn 0.8s ease-in forwards;
+}
+
+.gold-button:hover {
+   background: linear-gradient(135deg, #dd8b8b, #d17575);
+  transform: scale(1.05);
+}
+
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
